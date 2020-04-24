@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+// React component to delete items from the database.
 class ExpenseDeleter extends Component {
   constructor(props) {
     super(props);
@@ -43,6 +44,7 @@ class ExpenseDeleter extends Component {
     }
 }
 
+// React component to display queried items from the database.
 class ExpenseDisplayer extends Component {
   constructor(props) {
     super(props);
@@ -89,6 +91,7 @@ const formInputParsers = {
   },
 };
 
+// React component to record inputted values from a user, these values are then queried into a database.
 class ExpenseRecorder extends Component {
   constructor(props) {
     super(props);
@@ -165,27 +168,31 @@ class ExpenseRecorder extends Component {
   }
 }
 
+// The actual app to be rendered.
 class App extends Component {
 state = {
     data: null
   };
 
-  componentDidMount() {
-      // Call our fetch function below once the component mounts
-    this.callBackendAPI()
-      .then(res => this.setState({ data: res.express }))
-      .catch(err => console.log(err));
-  }
-    // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
-  callBackendAPI = async () => {
-    const response = await fetch('/express_backend');
-    const body = await response.json();
+  // Code used to help set up the express connection. This was used to ensure there was a connection to the express server through this application.
+  // used here https://medium.com/@maison.moa/setting-up-an-express-backend-server-for-create-react-app-bc7620b20a61
 
-    if (response.status !== 200) {
-      throw Error(body.message) 
-    }
-    return body;
-  };
+  // componentDidMount() {
+  //     // Call our fetch function below once the component mounts
+  //   this.callBackendAPI()
+  //     .then(res => this.setState({ data: res.express }))
+  //     .catch(err => console.log(err));
+  // }
+  //   // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
+  // callBackendAPI = async () => {
+  //   const response = await fetch('/express_backend');
+  //   const body = await response.json();
+
+  //   if (response.status !== 200) {
+  //     throw Error(body.message) 
+  //   }
+  //   return body;
+  // };
 
   render() {
     return (
