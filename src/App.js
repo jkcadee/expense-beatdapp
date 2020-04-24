@@ -36,7 +36,7 @@ class ExpenseDeleter extends Component {
       <label>Input the id of expense you want deleted here.</label>
       <br />
       <input className="Delete" type="text" ref={this.deleteID}/>
-
+      <br />
       <input type="submit" value="Delete"/>
     </form>
   );
@@ -63,7 +63,7 @@ class ExpenseDisplayer extends Component {
     let renderedData = this.state.data;
     console.log(this.state);
     return (
-      <table>
+      <table id="main-table">
                 <tr>
                   <th>Name</th>
                   <th>Cost</th>
@@ -133,7 +133,7 @@ class ExpenseRecorder extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmission}>
-        <label>
+        <label className="expenseRecorderLabel">
           Expense Name:
         </label>
         
@@ -141,7 +141,7 @@ class ExpenseRecorder extends Component {
 
         <br />
 
-        <label>
+        <label className="expenseRecorderLabel">
           Expense Cost:
         </label>
 
@@ -149,7 +149,7 @@ class ExpenseRecorder extends Component {
         <br />
 
 
-        <label>
+        <label className="expenseRecorderLabel">
           Item Category:
         </label>
 
