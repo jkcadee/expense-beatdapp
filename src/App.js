@@ -65,12 +65,14 @@ class ExpenseDisplayer extends Component {
     return (
       <table id="main-table">
                 <tr>
+                  <th>ID</th>
                   <th>Name</th>
                   <th>Cost</th>
                   <th>Category</th>
                 </tr>
           {renderedData.map(dynData =>
                 <tr>
+                  <td>{dynData.id}</td>
                   <td>{dynData.name}</td>
                   <td>{dynData.item_cost}</td>
                   <td>{dynData.category}</td>
